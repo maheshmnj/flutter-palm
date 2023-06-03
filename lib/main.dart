@@ -46,6 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
+  Color promptColor = Color.fromRGBO(239, 244, 251, 1.0);
+  Color responseColor = Colors.blueGrey.shade50;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,9 +81,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
                   return Container(
                     decoration: BoxDecoration(
-                      color: chatMessage.isPrompt!
-                          ? Colors.cyan[50]
-                          : Colors.blueGrey[50],
+                      color:
+                          chatMessage.isPrompt! ? promptColor : responseColor,
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     padding: EdgeInsets.all(8.0),
@@ -92,8 +93,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           // body color
                           blockquoteDecoration: BoxDecoration(
                             color: chatMessage.isPrompt!
-                                ? Colors.cyan[50]
-                                : Colors.blueGrey[50],
+                                ? promptColor
+                                : responseColor,
                           ),
                         ),
                         selectable: true,
