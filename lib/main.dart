@@ -103,29 +103,39 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemCount: responses.length,
               ),
             ),
-            Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    maxLines: 16,
-                    minLines: 1,
-                    textInputAction: TextInputAction.send,
-                    decoration: InputDecoration(hintText: 'Enter a prompt...'),
-                    controller: _textEditingController,
-                    keyboardType: TextInputType.multiline,
-                    onSubmitted: (String value) {
-                      _makeRequest(context);
-                    },
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      maxLines: 16,
+                      minLines: 1,
+                      textInputAction: TextInputAction.send,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          hintText: 'Enter a prompt...'),
+                      controller: _textEditingController,
+                      keyboardType: TextInputType.multiline,
+                      onSubmitted: (String value) {
+                        _makeRequest(context);
+                      },
+                    ),
                   ),
-                ),
-                IconButton(
-                  onPressed: () async {
-                    await _makeRequest(context);
-                  },
-                  icon: Icon(Icons.send),
-                )
-              ],
+                  IconButton(
+                    onPressed: () async {
+                      await _makeRequest(context);
+                    },
+                    icon: Icon(Icons.send),
+                  )
+                ],
+              ),
             ),
+            SizedBox(
+              height: 16,
+            )
           ],
         ),
       ),
