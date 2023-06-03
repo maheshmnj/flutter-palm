@@ -7,7 +7,9 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:palm_api_app/api.dart';
 
 // Add your PaLM MakerSuite API here:
-const _apiKey = '';
+/// using --dart define API_KEY=your_api_key
+///
+const _apiKey = String.fromEnvironment('API_KEY');
 
 void main() {
   runApp(PalmApiApp());
