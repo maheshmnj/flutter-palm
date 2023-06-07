@@ -3,7 +3,7 @@
 This is a Flutter chat app which uses the [PaLM API](https://developers.generativeai.google/products/palm) to generate messages.
 This project is only for experimental purposes to explore the PaLM API.
 
-This project is deployed at https://flutter-palm.netlify.app/
+This project is deployed at https://palmchat.netlify.app/
 
 ### Running the app
 
